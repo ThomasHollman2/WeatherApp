@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/inner_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="time"/>
+    <ImageView
+        app:layout_constraintTop_toTopOf="@+id/inner_time"
+        app:layout_constraintStart_toStartOf="@+id/inner_time"
+        android:id="@+id/inner_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        app:layout_constraintTop_toTopOf="@id/inner_icon"
+        app:layout_constraintStart_toStartOf="@id/inner_icon"
+        android:id="@+id/inner_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="temp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
