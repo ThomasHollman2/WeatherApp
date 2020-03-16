@@ -42,4 +42,3 @@ class WeatherViewModel(val baseUrl: String): ViewModel() {
         return futureWeather
     }
 }
-

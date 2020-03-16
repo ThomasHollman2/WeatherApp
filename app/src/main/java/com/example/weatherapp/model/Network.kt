@@ -14,7 +14,7 @@ class Network(val viewModel: WeatherViewModel) {
     private val TAG = Network::class.java.simpleName
     fun initRetrofit(baseUrl: String) {
 
-        getCurrentApi(baseUrl).getCurrent().enqueue(object : Callback<CurrentWeatherResponse> {
+        getCurrentApi(baseUrl).getCurrent("30067","b5df03aaf555ef3ad7f3acc64ac7ab92").enqueue(object : Callback<CurrentWeatherResponse> {
             override fun onFailure(call: Call<CurrentWeatherResponse>, t: Throwable) {
                 Log.d(TAG, "onFailure")
 

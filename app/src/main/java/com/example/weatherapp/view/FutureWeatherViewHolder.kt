@@ -16,14 +16,15 @@ import java.util.concurrent.Future
 class FutureWeatherViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
     private val TAG = FutureWeatherViewHolder::class.java.simpleName
 
-    val futureWeatherTemp: TextView = itemView.findViewById(R.id.tv_rv)
-   // val futureWeatherTime: TextView = itemView.findViewById(R.id.inner_time)
-    val futureWeatherIcon: ImageView = itemView.findViewById(R.id.inner_icon)
+    val futureDate: TextView = itemView.findViewById(R.id.tv_rv)
+//    val futureWeatherTime: TextView = itemView.findViewById(R.id.inner_time)
+//    val futureWeatherIcon: ImageView = itemView.findViewById(R.id.inner_icon)
 
 
-fun onBind(item: FutureWeatherResponse){
-    futureWeatherTemp.text = item.list[0].main.temp
-   // futureWeatherTime.text = item.list[1].dt_txt
+fun onBind(item: FutureWeatherPoko){
+    //futureWeatherTemp.text = item.list[0].main.temp
+   // futureWeatherTime.text = item.dt_txt
+    futureDate.text = item.dt_txt.substringBefore(' ')
     Log.d(TAG, "onBind")
 
 

@@ -32,6 +32,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         recycler_view.layoutManager = LinearLayoutManager(this)
         recycler_view.adapter = futureWeatherAdapter
+
+//       var x = 0
+//        if (x==0){
+//         x = x++
+//        val intent = Intent(this, Login::class.java)
+//        startActivity(intent)
+//        }
+
+
         val currentViewHolder = CurrentWeatherViewHolder(findViewById(R.id.background))
 
         val viewModel = ViewModelProvider(
@@ -45,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         ).get(WeatherViewModel::class.java)
-        viewModel.initWeather()
+
         viewModel.getCurrentDataSet().observe(this,
             object : Observer<CurrentWeatherResponse>{
                 override fun onChanged(t: CurrentWeatherResponse?) {
@@ -54,13 +63,14 @@ class MainActivity : AppCompatActivity() {
                 }
 
             })
-        val futureViewHolder = FutureWeatherViewHolder(findViewById(R.id.recycler_view))
+
         viewModel.getFutureDataSet().observe(this,
-            object  : Observer<FutureWeatherResponse>{
+            object : Observer<FutureWeatherResponse>{
                 override fun onChanged(t: FutureWeatherResponse?) {
-                    futureViewHolder.onBind(t!!)
+                    futureWeatherAdapter.dataSet = t
                 }
             })
+       viewModel.initWeather()
 
 
     }
